@@ -67,7 +67,7 @@
 #
 # 14. Сохраните текущие изменения в стэш с названием SENATOROV ver1.
 #
-# ![alt text](../images/image.png)
+# [alt text](./images/image.png)
 #
 # 15. Внесите любые изменения в репозиторий и сохраните второй стэш с
 # названием SENATOROV ver2.
@@ -76,8 +76,8 @@
 #
 # 16. Восстановите стэш SENATOROV ver1.
 #
-# ![alt text](../images/image-1.png)
+# [alt text](./images/image-1.png)
 #
 # 17. Удалите все стэши.
 #
-# ![alt text](../images/image-2.png)
+# [alt text](./images/image-2.png)
