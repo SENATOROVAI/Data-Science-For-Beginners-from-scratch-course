@@ -377,7 +377,7 @@ print(result)
 # 4.4 Использование круглых скобок для продолжения строки - этот способ был в
 # видео
 long_string = (
-    "This is a very long string that I would like to " 
+    "This is a very long string that I would like to "
     "continue on the next line."
 )
 print(long_string)
