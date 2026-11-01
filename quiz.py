@@ -458,14 +458,16 @@
 #
 # ### Вопрос 4.1
 #
-# **Перенос с обратным слэшем**
+# **Обратный слэш (`\`):**
 #
-# **Ответ:** Символ \ позволяет продолжить выражение на следующей физической строке, но этот приём сравнительно хрупкий.
+# **Ответ:** Символ `\` позволяет продолжить выражение на следующей физической строке.
 #
 # ```python
-# string_continued = (
-#     "This is a long string that we want to " "split across multiple lines."
-# )
+# # fmt: off
+# string_continued = "This is a long string that we want to " \
+#                    "split across multiple lines."
+# # fmt: on
+#
 # print(string_continued)
 # ```
 
