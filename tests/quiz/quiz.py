@@ -377,14 +377,18 @@ print(result)
 # 4.4 Использование круглых скобок для продолжения строки - этот способ был в
 # видео
 long_string = (
-    "This is a very long string that I would like to " "continue on the next line."
+    "This is a very long string that I would like to " 
+    "continue on the next line."
 )
 print(long_string)
 # 4.5 Форматированные строки (f-строки) с использованием скобок
 letter_a = 5
 letter_b = 6
 product_ab = letter_a * letter_b
-message = f"when {letter_a} is multiplied by {letter_b}, " f"the result is {product_ab}"
+message = (
+    f"when {letter_a} is multiplied by {letter_b}, "
+    f"the result is {product_ab}"
+)
 print(message)
 # 4.6 Сложение строк с помощью +     - этот тоже
 string_part1 = "This is the first part, "
