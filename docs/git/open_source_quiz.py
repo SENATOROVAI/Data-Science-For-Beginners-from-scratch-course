@@ -69,7 +69,7 @@
 #
 # 2.6 Выполните Merge pull request (Рисунок 116), вставьте сюда ссылку на ваш
 #     пул реквест
-# https://github.com/SENATOROVAI/Data-Science-For-Beginners-from-scratch-course/pull/676
+# https://github.com/AmadeyM111/Data-Science-For-Beginners-from-scratch-SENATOROV/pull/1
 #
 # 2.7 Вставьте сюда ссылку на закрытые пул реквесты в репозитории, найти можно
 #     тут
