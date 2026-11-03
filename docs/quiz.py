@@ -1,4 +1,4 @@
-"""[TASK] Open Source Contribution."""
+"""[TASK] GitHub quiz."""
 
 # 1.1. Что такое GitHub?
 #
@@ -93,6 +93,8 @@
 #
 # Ссылка на любой коммит:
 #
+# https://github.com/SENATOROVAI/Data-Science-For-Beginners-from-scratch-course/commit/6db1b0bcde2f9900a2d94c88c458385f2d1a508c
+#
 # 2.9. Как открыть pull request, указывающий на другой pull request, и
 # зачем это нужно? (Рисунок 117)
 #
@@ -132,9 +134,8 @@
 # нужный PR и на вкладке Conversation в нижней части страницы нажать
 # кнопку Close pull request. Изменения не будут объединены с основной
 # веткой.
-# Официальная инструкция GitHub: Closing a pull request .
 #
-# ![alt text](images/image.png)
+# Скриншот: docs/images/image.png
 #
 # 3.3. Нужно ли создавать issue перед отправкой pull request?
 #
@@ -224,11 +225,14 @@
 # 8. Какой символ используется для упоминания пользователя?
 #
 # Символ @. Например, @username.
+#
 # 8.1. Где находится центр уведомлений? Дайте ссылку.
+#
 # Центр уведомлений находится в правом верхнем углу GitHub и
 # обозначается значком уведомлений (колокольчик или значок входящих
 # уведомлений).
-# Ссылка: github.com
+#
+# Ссылка: [github.com](https://github.com/notifications)
 #
 # 9. Что такое файл README и зачем он нужен?
 #
