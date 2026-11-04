@@ -8,11 +8,11 @@
 
 Изменения после выпуска кандидата будут добавляться сюда.
 
-## [1.0.0-rc.1] - 2026-11-03
+## [1.0.0-rc.2] - 2026-11-04
 
 ### Added
-- Материалы по GitHub и Open Source: `opensource.ipynb` и `opensource.py`.
-- Проверочные материалы: `quiz.ipynb`, `quiz.py` и иллюстрация `images/image.png`.
+- Материалы по GitHub и Open Source: `docs/github/opensource.ipynb` и `docs/github/opensource.py`.
+- Проверочные материалы: `docs/github/quiz.ipynb`, `docs/github/quiz.py` и иллюстрация `docs/github/images/image.png`.
 - Документы `AUTHORS.md`, `CODE_OF_CONDUCT.md` и `SECURITY.md`.
 - Настоящий журнал изменений `CHANGELOG.md`.
 
@@ -27,6 +27,3 @@
 ### Fixed
 - Ссылка на лицензию в `CONTRIBUTING.md`: `LICENSE.md` заменена на `LICENSE`.
 - Уточнены ответы в `opensource.py` и `opensource.ipynb` по замечаниям ревью.
-
-
-> Дата указана для планируемого релиза. При публикации в другой день замените её на фактическую.

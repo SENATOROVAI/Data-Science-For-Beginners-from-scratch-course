@@ -1,25 +1,23 @@
-
 # Data Science For Beginners
 
 [![Python](https://img.shields.io/badge/Python-3-blue?logo=python)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-<!-- Добавить бейдж CI для реально существующего workflow -->
+[![CI](https://github.com/SENATOROVAI/Data-Science-For-Beginners-from-scratch-course/actions/workflows/pre-commit.yaml/badge.svg)](https://github.com/SENATOROVAI/Data-Science-For-Beginners-from-scratch-course/actions/workflows/pre-commit.yaml)
 
 Практические материалы по Python, математике, анализу данных и машинному обучению.
 
 ## Задания
 
-| Тема | Материалы |
-| --- | --- |
-| GitHub и Open Source | [Задания](docs/github/) |
+| Задание | Issue | Файлы | Статус |
+| --- | --- | --- | --- |
+| GitHub и Open Source | [intro-cs#8](https://github.com/SENATOROVAI/intro-cs/issues/8) | [Материалы](docs/github/) | Выполнено, на ревью |
 
 ## Быстрый старт
 
 ```bash
 git clone https://github.com/SENATOROVAI/Data-Science-For-Beginners-from-scratch-course.git
 cd Data-Science-For-Beginners-from-scratch-course
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install pre-commit
 pre-commit install
@@ -30,6 +28,7 @@ pre-commit install
 ```text
 .
 ├── .github/
+│   └── workflows/
 ├── docs/
 │   └── github/
 │       ├── images/
@@ -51,20 +50,22 @@ pre-commit install
 
 ## Стандарты кода
 
-- Соблюдайте PEP 8 для Python.
-- Используйте Conventional Commits.
-- Запускайте pre-commit перед отправкой изменений.
-- Синхронизируйте файлы .py и .ipynb.
-- Не добавляйте секреты и временные файлы.
+- Соблюдайте PEP 8 при написании кода на Python.
+- Используйте Conventional Commits для сообщений коммитов.
+- Проверяйте изменения с помощью `pre-commit`.
+- Поддерживайте согласованность ответов в `.py` и `.ipynb`.
+- Не добавляйте секреты, кэши и временные файлы.
 
 ## Участие в проекте
 
-Порядок внесения изменений описан в [CONTRIBUTING.md](CONTRIBUTING.md).
-
-Правила поведения приведены в [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
-
-Информация об авторах находится в [AUTHORS.md](AUTHORS.md).
+- [CONTRIBUTING.md](CONTRIBUTING.md) — как предлагать изменения.
+- [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — правила поведения.
+- [SECURITY.md](SECURITY.md) — сообщения об уязвимостях.
+- [AUTHORS.md](AUTHORS.md) — авторы и участники.
+- [CHANGELOG.md](CHANGELOG.md) — история изменений.
 
 ## Лицензия
 
 Проект распространяется на условиях [MIT License](LICENSE).
+История изменений приведена в [CHANGELOG.md](CHANGELOG.md),
+а правила раскрытия уязвимостей — в [SECURITY.md](SECURITY.md).
