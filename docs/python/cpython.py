@@ -52,7 +52,7 @@
 # Результат на моём компьютере:
 #
 # ```text
-# [ЗАПОЛНИТЬ ПОСЛЕ ЗАПУСКА НА МОЁМ ПК]
+# C:\\Users\\AT\\AppData\\Local\\Programs\\Python\\Python312\\python.exe
 # ```
 #
 # ### 8. Что содержится в папке Include в CPython?
@@ -175,9 +175,9 @@
 # Результат:
 #
 # ```text
-# [ЗАПОЛНИТЬ: версия CPython]
-# [ЗАПОЛНИТЬ: путь или пути из where python]
-# [ЗАПОЛНИТЬ: sys.executable]
+# Python 3.12.10
+# C:\\Users\\AT\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\nC:\\Users\\AT\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe\nC:\\Users\\AT\\AppData\\Local\\Python\\bin\\python.exe
+# C:\\Users\\AT\\AppData\\Local\\Programs\\Python\\Python312\\python.exe
 # ```
 #
 # ## Задание 2. Исследование структуры CPython
