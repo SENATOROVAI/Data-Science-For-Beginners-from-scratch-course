@@ -7,7 +7,7 @@
 
 ## [Unreleased]
 
-## [1.0.0-rc.1] - 2026-11-04
+## [1.0.0-rc.2] - 2026-11-04
 
 ### Added
 
@@ -34,5 +34,5 @@
 - Ссылка на лицензию в `CONTRIBUTING.md` ведёт на `LICENSE`, а не на
   `LICENSE.md`.
 
-[Unreleased]: https://github.com/AmadeyM111/Data-Science-For-Beginners-from-scratch-SENATOROV/compare/v1.0.0-rc.1...HEAD
-[1.0.0-rc.1]: https://github.com/AmadeyM111/Data-Science-For-Beginners-from-scratch-SENATOROV/releases/tag/v1.0.0-rc.1
+[Unreleased]: https://github.com/AmadeyM111/Data-Science-For-Beginners-from-scratch-SENATOROV/compare/v1.0.0-rc.2...HEAD
+[1.0.0-rc.2]: https://github.com/AmadeyM111/Data-Science-For-Beginners-from-scratch-SENATOROV/releases/tag/v1.0.0-rc.2
