@@ -2,7 +2,6 @@
 
 ## Авторы проекта
 
-- [Руслан Сенаторов](https://github.com/RuslanSenatorov) — мейнтейнер курса, автор заданий и материалов.
 - [AmadeyM111](https://github.com/AmadeyM111) — участник курса, выполнил задания по git, Python и open source.
 
 ## Благодарности
