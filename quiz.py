@@ -239,8 +239,8 @@ git stash pop  (или git stash apply, чтобы не удалять стэш 
 # 1)Какая команда конвертирует файл в py из ipynb? 
 # подсказка https://t.me/c/1937296927/1/26527 
 #
-# git commit --amend (или кнопка Commit Amend  VSCode). 
-# Если какие-то файлы не сконвертировались автоматом, то jupytext --to py *.ipynb (для текущей директории), или jupytext --to py script.ipyn reports/log.ipynb (указанные файлы)
+# jupyter nbconvert --to script файл.ipynb
+# или jupytext --to py:light файл.ipynb (для нескольких файлов: jupytext --to py:light *.ipynb)
 #
 # 2) Что такое пакетный менеджер? Вы пользуетесь пакетным менеджером conda или pip? Какой лучше использовать для дата сайнс?
 #
