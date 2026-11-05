@@ -124,7 +124,7 @@
 # 23.1) Как сохранить стэш?
 #   git командa(подсказка: https://t.me/c/1937296927/3602/19531): 
 #
-# git stash save "NAME_STASH"
+git stash push -m "NAME_STASH"  (старый вариант git stash save устарел)
 #
 #   Кнопка в vs code:
 #
