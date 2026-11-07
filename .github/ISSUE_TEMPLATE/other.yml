@@ -10,5 +10,3 @@ body:
       description: Is there anything else we should know about this issue?
     validations:
       required: false
-
-
