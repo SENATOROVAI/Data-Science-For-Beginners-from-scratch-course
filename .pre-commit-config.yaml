@@ -1,4 +1,13 @@
+# Hooks of the commit itself and of its message: `pre-commit install` sets up both.
+default_install_hook_types: [pre-commit, commit-msg]
 repos:
+  # The title of a commit by Conventional Commits: «docs: ответить на вопросы о GitHub Issues»
+  # (https://github.com/SENATOROVAI/intro-cs/issues/20). Merge commits pass.
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.5.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
   - repo: https://github.com/mwouts/jupytext
     rev: "v1.16.4b"
     hooks:
