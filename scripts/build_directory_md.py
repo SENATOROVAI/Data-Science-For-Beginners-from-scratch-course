@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """module."""
+
 import os
 from collections.abc import Iterator
 
@@ -36,8 +37,8 @@ def print_path(old_path: str, new_path: str) -> str:
 def print_directory_md(top_dir: str = ".") -> None:
     """SENATOROV."""
     old_path = ""
-    for filepath in sorted(good_file_paths(top_dir)):
-        filepath, filename = os.path.split(filepath)
+    for file_path in sorted(good_file_paths(top_dir)):
+        filepath, filename = os.path.split(file_path)
         if filepath != old_path:
             old_path = print_path(old_path, filepath)
         indent = (filepath.count(os.sep) + 1) if filepath else 0
