@@ -11,7 +11,7 @@
 # Она принимает Python-код, компилирует его в байт-код и выполняет этот байт-код
 # в виртуальной машине CPython.
 #
-# ### 2. Ключевые различия Python и CPython
+# ### 2. Различия Python и CPython (по материалам задания; изображение вопроса необходимо сверить)
 #
 # Python — это сам язык: правила, конструкции `if`, `for`, функции, классы и
 # другие элементы синтаксиса. CPython — конкретная программа, которая реализует
@@ -42,17 +42,18 @@
 #
 # ### 7. Укажите путь к интерпретатору CPython на вашем компьютере
 #
-# Команда для проверки в Windows:
+# Команды для проверки на Lubuntu:
 #
-# ```text
-# where python
-# python -c "import sys; print(sys.executable)"
+# ```bash
+# which python3
+# python3 -c "import platform; print(platform.python_implementation())"
 # ```
 #
 # Результат на моём компьютере:
 #
 # ```text
-# C:\\Users\\AT\\AppData\\Local\\Programs\\Python\\Python312\\python.exe
+# /usr/bin/python3
+# CPython
 # ```
 #
 # ### 8. Что содержится в папке Include в CPython?
@@ -85,14 +86,13 @@
 #
 # ### 11. Какая команда используется для запуска файла с помощью CPython?
 #
-# В Windows обычно используется:
+# В Lubuntu используется:
 #
 # ```text
-# python script.py
+# python3 script.py
 # ```
 #
-# Если установлено несколько версий, также может использоваться `py` или
-# `python3`.
+# В Linux команда `python3` обычно указывает на установленный Python 3.
 #
 # ### 12. Можно ли запускать текстовые файлы через интерпретатор Python? Почему?
 #
@@ -105,7 +105,7 @@
 # Можно передать полный путь к интерпретатору, а после него полный путь к файлу:
 #
 # ```text
-# "C:\\Path\\To\\python.exe" "C:\\Path\\To\\script.py"
+# /usr/bin/python3 /home/ata/пример/script.py
 # ```
 #
 # ## Введение в PyPy
@@ -133,9 +133,9 @@
 #
 # ### 17. Как установить PyPy после скачивания?
 #
-# Для готовой сборки на Windows нужно скачать подходящий архив, распаковать его
-# в отдельную папку и запускать находящийся внутри исполняемый файл PyPy.
-# При необходимости путь к этой папке можно добавить в переменную PATH.
+# В Lubuntu можно скачать архив с официального сайта, распаковать в `~/tools`
+# и запустить файл `bin/pypy3` из распакованной папки.
+# Обычный CPython при этом остаётся установленным.
 #
 # ### 18. Как запустить файл с помощью PyPy?
 #
@@ -145,8 +145,7 @@
 # pypy3 example_pypy.py
 # ```
 #
-# Если команда не добавлена в PATH, нужно указать полный путь к
-# `pypy3.exe`.
+# Если команда не добавлена в PATH, можно использовать полный путь к `bin/pypy3`.
 #
 # ### 19. Почему PyPy может выполнять код быстрее, чем CPython?
 #
@@ -155,98 +154,117 @@
 # полезно для длительно работающего чистого Python-кода с большим количеством
 # циклов. Для коротких программ или некоторых C-расширений ускорения может не
 # быть.
+
+# # Практические задания — результаты на Lubuntu
 #
+# Результаты ниже получены на моём компьютере. Для сравнения производительности
+# сделано по одному запуску каждого интерпретатора.
 #
-# # Практические задания
+# ## Задание 1. Проверка CPython
 #
-# Ниже должны быть записаны реальные результаты с моего компьютера. Значения
-# нельзя заменять результатами с чужого компьютера.
+# Команды:
 #
-# ## Задание 1. Проверка установки CPython
-#
-# Выполнить:
-#
-# ```text
-# python --version
-# where python
-# python -c "import sys; print(sys.executable)"
+# ```bash
+# python3 --version
+# which python3
+# python3 -c "import platform; print(platform.python_implementation())"
 # ```
 #
 # Результат:
 #
 # ```text
-# Python 3.12.10
-# C:\\Users\\AT\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\nC:\\Users\\AT\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe\nC:\\Users\\AT\\AppData\\Local\\Python\\bin\\python.exe
-# C:\\Users\\AT\\AppData\\Local\\Programs\\Python\\Python312\\python.exe
+# Python 3.12.3
+# /usr/bin/python3
+# CPython
 # ```
 #
-# ## Задание 2. Исследование структуры CPython
+# CPython установлен и работает.
 #
-# Получить путь к каталогу заголовочных файлов:
+# ## Задание 2. Структура CPython
 #
-# ```text
-# python -c "import sysconfig; print(sysconfig.get_path('include'))"
+# Команды:
+#
+# ```bash
+# python3 -c "import sysconfig; print(sysconfig.get_path('include'))"
+# find /usr/include/python3.12 -type f -name "*.h" | wc -l
 # ```
 #
 # Результат:
 #
 # ```text
-# [ЗАПОЛНИТЬ: путь к Include]
-# [ЗАПОЛНИТЬ: количество C-заголовочных файлов]
+# /usr/include/python3.12
+# 218
 # ```
 #
-# Официальный репозиторий CPython:
-# https://github.com/python/cpython
+# В каталоге заголовочных файлов установленного CPython 218 файлов с расширением
+# `.h` (с учётом вложенных папок). Они содержат объявления для C API Python.
 #
-# ## Задание 3. Запуск файла с помощью CPython
+# Официальный исходный код CPython: https://github.com/python/cpython
 #
-# Содержимое `example.txt`:
+# ## Задание 3. Запуск текстового файла через CPython
+#
+# Содержимое исходного файла `example.txt`:
 #
 # ```python
 # print("Hello from CPython!")
 # ```
 #
+# Команды:
+#
+# ```bash
+# python3 example.txt
+# mv example.txt example.py
+# python3 example.py
+# ```
+#
+# Оба запуска вывели:
+#
+# ```text
+# Hello from CPython!
+# ```
+#
+# Вывод: CPython выполнил одинаковый корректный Python-код с расширениями
+# `.txt` и `.py`; при явном запуске через `python3` расширение не помешало.
+#
+# ## Задание 4. Установка и запуск PyPy
+#
+# PyPy 8.0.1 (совместимый с Python 3.12.15) скачан и распакован
+# в `/home/ata/tools/pypy3.12-v8.0.1-linux64`.
+#
+# Проверка версии:
+#
+# ```bash
+# ~/tools/pypy3.12-v8.0.1-linux64/bin/pypy3 --version
+# ```
+#
+# Вывод:
+#
+# ```text
+# Python 3.12.15 (d90944c94ad6, Oct 13 2026, 18:01:21)
+# [PyPy 8.0.1 with GCC 14.2.1 20250110 (Red Hat 14.2.1-11)]
+# ```
+#
+# Содержимое `example_pypy.py`:
+#
+# ```python
+# print("Hello from PyPy!")
+# ```
+#
 # Запуск:
 #
-# ```text
-# python example.txt
-# python example.py
+# ```bash
+# ~/tools/pypy3.12-v8.0.1-linux64/bin/pypy3 example_pypy.py
 # ```
 #
-# Результат:
+# Вывод:
 #
 # ```text
-# [ЗАПОЛНИТЬ: вывод example.txt]
-# [ЗАПОЛНИТЬ: вывод example.py]
-# ```
-#
-# Вывод о расширении:
-#
-# [ЗАПОЛНИТЬ ПО РЕАЛЬНОМУ ЗАПУСКУ]
-#
-# ## Задание 4. Установка и использование PyPy
-#
-# После скачивания и распаковки PyPy выполнить:
-#
-# ```text
-# pypy3 --version
-# pypy3 example_pypy.py
-# ```
-#
-# Если `pypy3` не добавлен в PATH, использовать полный путь к
-# `pypy3.exe`.
-#
-# Результат:
-#
-# ```text
-# [ЗАПОЛНИТЬ: версия PyPy]
-# [ЗАПОЛНИТЬ: путь к PyPy]
-# [ЗАПОЛНИТЬ: вывод example_pypy.py]
+# Hello from PyPy!
 # ```
 #
 # ## Задание 5. Сравнение производительности CPython и PyPy
 #
-# Код `performance_test.py`:
+# Использовался один и тот же скрипт `performance_test.py`:
 #
 # ```python
 # import time
@@ -261,26 +279,29 @@
 # print("Execution time:", end_time - start_time, "seconds")
 # ```
 #
-# Запустить:
+# Команды:
 #
-# ```text
-# python performance_test.py
-# pypy3 performance_test.py
+# ```bash
+# python3 performance_test.py
+# ~/tools/pypy3.12-v8.0.1-linux64/bin/pypy3 performance_test.py
 # ```
 #
-# Результат:
+# Фактический результат CPython 3.12.3:
 #
 # ```text
-# CPython:
-# Result: [ЗАПОЛНИТЬ]
-# Execution time: [ЗАПОЛНИТЬ] seconds
-#
-# PyPy:
-# Result: [ЗАПОЛНИТЬ]
-# Execution time: [ЗАПОЛНИТЬ] seconds
+# Result: 49999995000000
+# Execution time: 0.9985823631286621 seconds
 # ```
 #
-# Вывод:
+# Фактический результат PyPy 8.0.1:
 #
-# [ЗАПОЛНИТЬ ПО РЕАЛЬНЫМ ЗАМЕРАМ НА МОЁМ ПК]
+# ```text
+# Result: 49999995000000
+# Execution time: 0.034110069274902344 seconds
+# ```
 #
+# Вывод: оба интерпретатора вычислили одинаковую сумму.
+# В одном измерении PyPy был примерно в 29,3 раза быстрее CPython.
+# Это объясняется преимуществами JIT-компиляции для такого цикла.
+# Результат не следует обобщать на все программы; для более точного
+# сравнения понадобятся многократные запуски.
