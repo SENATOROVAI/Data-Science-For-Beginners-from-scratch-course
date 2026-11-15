@@ -19,12 +19,12 @@
 # На каком языке написан CPython?
 # на языке C
 #
-# Почему Python считается быстрым, несмотря на то что
-# это интерпретируемый язык?
-#
-# Потому что код на языке С заранее компилируется в машинный код.
-# Встроенные функции Python написаны на C, поэтому при их вызове работа
-#  выполняется сразу в машинном коде, быстро.
+# CPython переводит код программы в байт-код и выполняет его интерпретатором,
+# поэтому сам код на Python работает сравнительно медленно.
+# Быстрым Python делают встроенные функции и библиотеки, написанные на C
+# (например, sum, sorted, NumPy).
+# Они заранее скомпилированы в машинный код, поэтому, когда программа их вызывает,
+#  основная работа выполняется быстро.
 #
 # Укажите путь к интерпретатору CPython на вашем компьютере.
 # Меню пуск --- пишем Python (выходит например Python 3.12(64-bit))
@@ -96,14 +96,13 @@
 # Найдите папку, в которую установлен Python:
 # where python     # Windows
 # which python3    # Linux / macOS
-# C:\Users\kanat\AppData\Local\Programs\Python\Python312\python.exe
-# C:\Users\kanat\AppData\Local\Programs\Python\Python315\python.exe
-# C:\Users\kanat\AppData\Local\Programs\Python\Python39\python.exe
-# C:\Users\kanat\AppData\Local\Microsoft\WindowsApps\python.exe
+# C:\Users\user\AppData\Local\Programs\Python\Python312\python.exe
+# C:\Users\user\AppData\Local\Programs\Python\Python315\python.exe
+# C:\Users\user\AppData\Local\Programs\Python\Python39\python.exe
+# C:\Users\user\AppData\Local\Microsoft\WindowsApps\python.exe
 #
 # Откройте папку include и изучите её содержимое.
 # Сколько в ней файлов на C?
-# 83 с подпапками
 # В папке Include 213 файлов включая подпапки cpython и internal.
 #  Прямо в папке Include — 73 файлов.
 #
