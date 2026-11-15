@@ -15,10 +15,6 @@
 # - conda deactivate — деактивация вирт окр
 # - conda clean -a — очистка
 
-# ![image.png](attachment:image.png)
-
-# ![image.png](attachment:image.png)
-
 # pip install пакет = установка пакета в venv
 # conda install пакет = установка в conda
 
@@ -32,18 +28,12 @@
 # pip show = информация о пакете ее версия и тд
 # conda list = список пакетов в conda
 
-# ![image.png](attachment:image.png)
-
-# ![image.png](attachment:image.png)
-
 # Где по умолчанию больше пакетов, в venv или в conda, и почему DS
 # используют conda?
 # В новом venv лежит только pip (с Python 3.12 setuptools в venv уже
 # не ставится), а numpy и pandas есть в дистрибутиве Anaconda, но не в
 # только что созданном conda-окружении. DS любят conda, потому что она
 # сама ставит готовые бинарные пакеты, в том числе не-Python библиотеки.
-
-# ![image.png](attachment:image.png)
 
 # Зачем нужно виртуальное окружение?
 # Оно изолирует зависимости и версии Python между проектами, поэтому
