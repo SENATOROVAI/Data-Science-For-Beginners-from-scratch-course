@@ -1,0 +1,67 @@
+# Пересылает события pull request в рутину Claude через API-триггер.
+# Нужен секрет репозитория CLAUDE_ROUTINE_TOKEN (токен API-триггера рутины).
+# pull_request_target работает в контексте основного репозитория, поэтому
+# секрет доступен и для PR из форков. Код PR здесь не запускается и не клонируется.
+name: Claude routine trigger
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, edited, closed]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "Номер PR для пробного запуска (рутина сразу завершится: sender = ruslansenatorov)"
+        required: true
+
+permissions: {}
+
+jobs:
+  fire:
+    if: >-
+      github.event_name == 'workflow_dispatch' || (
+        github.event.sender.login != 'ruslansenatorov' &&
+        github.event.sender.type != 'Bot' &&
+        !endsWith(github.event.sender.login, '[bot]')
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Send event to Claude routine
+        env:
+          ROUTINE_URL: https://api.anthropic.com/v1/claude_code/routines/trig_016BjKm1Sd4eztEPjx6NG6DK/fire
+          ROUTINE_TOKEN: ${{ secrets.CLAUDE_ROUTINE_TOKEN }}
+          DISPATCH_PR: ${{ github.event.inputs.pr_number }}
+        run: |
+          if [ -z "$ROUTINE_TOKEN" ]; then
+            echo "::error::Секрет CLAUDE_ROUTINE_TOKEN не задан"
+            exit 1
+          fi
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            TEXT=$(jq -nc --arg pr "$DISPATCH_PR" --arg repo "$GITHUB_REPOSITORY" \
+              '{event: "workflow_dispatch", action: "test", repository: $repo,
+                pr_number: ($pr | tonumber), sender_login: "ruslansenatorov", sender_type: "User"}')
+          else
+            TEXT=$(jq -c --arg event "$GITHUB_EVENT_NAME" '{
+              event: $event,
+              action: .action,
+              repository: .repository.full_name,
+              pr_number: (.pull_request.number // .issue.number),
+              pr_author: (.pull_request.user.login // .issue.user.login),
+              head_sha: .pull_request.head.sha,
+              merged: .pull_request.merged,
+              sender_login: .sender.login,
+              sender_type: .sender.type,
+              comment_id: .comment.id,
+              comment_author: .comment.user.login,
+              review_id: .review.id,
+              review_state: .review.state
+            } | with_entries(select(.value != null))' "$GITHUB_EVENT_PATH")
+          fi
+          echo "Payload: $TEXT"
+          jq -nc --arg text "$TEXT" '{text: $text}' > body.json
+          curl -sS --fail-with-body --retry 3 --retry-delay 5 -X POST "$ROUTINE_URL" \
+            -H "Authorization: Bearer $ROUTINE_TOKEN" \
+            -H "anthropic-beta: experimental-cc-routine-2026-04-01" \
+            -H "anthropic-version: 2023-06-01" \
+            -H "Content-Type: application/json" \
+            --data @body.json

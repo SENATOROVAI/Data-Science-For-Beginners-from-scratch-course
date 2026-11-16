@@ -1,6 +1,6 @@
 blank_issues_enabled: false
 contact_links:
-  - name: общий issues 
+  - name: общий issues
     url: https://github.com/SENATOROVAI/Data-Science-For-Beginners-from-scratch-SENATOROV/issues/new
     about: если не знаете какой создать ишьюс, создайте этот
   - name: Telegram community
