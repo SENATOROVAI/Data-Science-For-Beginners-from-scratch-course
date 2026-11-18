@@ -161,7 +161,7 @@
 # 5. Проверьте, что выводится на экран.
 #
 # $ pypy /c/Users/User/Desktop/example_pypy.py
-# Hello from CPython!
+# Hello from PyPy!
 #
 # Задание 5. Сравнение производительности CPython и PyPy
 #
