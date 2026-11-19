@@ -1,6 +1,6 @@
 # Улучшения репозитория
 - Улучшен [ишьюс ревью](https://github.com/SENATOROVAI/intro/issues/5), [обновлены пункты 1.7, 3.2](https://github.com/SENATOROVAI/intro/issues/13), спасибо [rizespbya](https://github.com/rizespbya)
-- Улучшен [ишьюс ревью](https://github.com/SENATOROVAI/intro/issues/5), [обновлены пункты 5.5-5.6](https://github.com/SENATOROVAI/intro/issues/12), спасибо [lessWronger](https://github.com/lessWronger) 
+- Улучшен [ишьюс ревью](https://github.com/SENATOROVAI/intro/issues/5), [обновлены пункты 5.5-5.6](https://github.com/SENATOROVAI/intro/issues/12), спасибо [lessWronger](https://github.com/lessWronger)
 - Синхронизирован линтер pre-commit,  [пул реквест](https://github.com/SENATOROVAI/Data-Science-For-Beginners-from-scratch-SENATOROV/pull/474), спасибо [rizespbya](https://github.com/rizespbya)
 - Улучшен [интро](https://github.com/SENATOROVAI/intro/blob/main/README.md),[обновлена структура](https://github.com/SENATOROVAI/intro/issues/10), спасибо [savemysoul382](https://github.com/savemysoul382)
 - Улучшен [ишьюс git](https://github.com/SENATOROVAI/intro-cs/issues/1), [обновлена структура](https://github.com/SENATOROVAI/intro-cs/issues/15), спасибо [savemysoul382](https://github.com/savemysoul382)
@@ -17,7 +17,8 @@
 
 
 # Улучшения курсов
-- Добавлен скрин с дискуссиями в регламент взаимодействия в курсах, спасибо [iVenok](https://github.com/iVenok) 
+- Улучшил описание статьи, дельта Х [простая регрессия](https://stepik.org/lesson/1734634/step/3?unit=1758544), [пулл](https://github.com/SENATOROVAI/Normal-equations-scalar-form-solver-simple-linear-regression-course/pull/14), спасибо [Toleranzy](https://github.com/Toleranzy)
+- Добавлен скрин с дискуссиями в регламент взаимодействия в курсах, спасибо [iVenok](https://github.com/iVenok)
 - Опечатка в курсе по [множественной регрессии](https://stepik.org/lesson/1792642/step/10?auth=login&unit=1818331), некорректная формулировка, спасибо [rizespbya](https://github.com/rizespbya)
 - неправильно раскрывается (X@θ).T [множественной регрессии](https://stepik.org/lesson/1792813/step/1?discussion=12716622&unit=1818503), [ишьюс](https://github.com/SENATOROVAI/multy-linear-regression-stepik/issues/1), спасибо [rizespbya](https://github.com/rizespbya)
 - Формула обратной матрицы [множественная регрессия](https://stepik.org/lesson/1792746/step/1?unit=1818436), [ишьюс](https://github.com/SENATOROVAI/multy-linear-regression-stepik/issues/2), спасибо [rizespbya](https://github.com/rizespbya)
@@ -26,11 +27,12 @@
 
 - Улучшение курса [множественная регрессия](https://stepik.org/lesson/1792608/step/10?unit=1818297), внедрение Data Leakage, спасибо [smrnvdn](https://github.com/smrnvdn)
 - Улучшение курса [множественной регрессии](https://stepik.org/lesson/1792810/step/2?auth=login&unit=1818500), внедрение логической связи вывода матричной формы SSE, спасибо [rizespbya](https://github.com/rizespbya)
-- Улучшение курса, [множественной регрессии](https://stepik.org/lesson/1792848/step/2?unit=1818537), внедрён аудиопересказ, спасибо [Ekubbo](https://github.com/Ekubbo) 
+- Улучшение курса, [множественной регрессии](https://stepik.org/lesson/1792848/step/2?unit=1818537), внедрён аудиопересказ, спасибо [Ekubbo](https://github.com/Ekubbo)
 - Улучшение курса [SVD](https://stepik.org/lesson/1863889/step/1?unit=1889025), исправлена опечатка подстановки, спасибо [rizespbya](https://github.com/rizespbya)
 - Нет V^T в итоговой записи и у 2 айгенвелью 3 компонента без "-" [SVD](https://stepik.org/lesson/1832067/step/1?unit=1857101),[ишьюс](https://github.com/SENATOROVAI/svd-stepik/issues/1), спасибо [rizespbya](https://github.com/rizespbya)
 - Неправильно посчитан вектор u1 [SVD](https://stepik.org/lesson/1863989/step/2?unit=1889127),[ишьюс](https://github.com/SENATOROVAI/svd-stepik/issues/2), спасибо [Svetankova](https://github.com/Svetankova)
 - Матрица сигма не mxn [SVD](https://stepik.org/lesson/1865202/step/1?auth=login&unit=1890345),[ишьюс](https://github.com/SENATOROVAI/svd-stepik/issues/3), спасибо [Svetankova](https://github.com/Svetankova)
+- Уточнение в задании response:numpy, pandas, , python-dateutil, pytz, six, tzdata в курсе по [линтерам](https://www.udemy.com/course/python-opensource-git/learn/quiz/7695835#reviews), спасибо [AmadeyML](https://github.com/AmadeyM111)
 - Опечатка "автоматически" в курсе по [линтерам](https://stepik.org/lesson/1711770/step/13?unit=1735194), спасибо [dshilin](https://github.com/dshilin)
 - Обновление названия репозитория в курсе по [линтерам](https://stepik.org/lesson/1711770/step/13?unit=1735194), [ишьюс](https://github.com/SENATOROVAI/python-open-source-standards-course/issues/15), спасибо [iVenok](https://github.com/iVenok)
 - Внедрение контейнера UBUNTU в курс по [линтерам](https://stepik.org/lesson/1719986/step/1?unit=1743519), [ишьюс](https://github.com/SENATOROVAI/python-from-zero-to-open-source-stepik/issues/3), спасибо [stokato](https://github.com/stokato/)
@@ -43,10 +45,12 @@
 - Опечатка в слове "константа", курс [GD](https://stepik.org/lesson/1829077/step/13?unit=1855099), [ишьюс](https://github.com/SENATOROVAI/multy-linear-regression-gradient-descent-stepik/issues/2), спасибо [Lookmir](https://github.com/Lookmir)
 - Опечатка в слове "ортогонализации", курс [QR](https://stepik.org/lesson/1880356/step/3?unit=1905773), [ишьюс](https://github.com/SENATOROVAI/qr-stepik/issues/1), спасибо [svetlana-s88](https://github.com/svetlana-s88)
 - Старая ссылка на репозиторий в курсе по [линтерам](https://stepik.org/lesson/1711926/step/6?unit=1735359), спасибо [solik220-bit](https://github.com/solik220-bit)
+- Опечатка "физический"→"физически" в курсе по [множественной регрессии](https://stepik.org/lesson/1792642/step/4), [ишьюс](https://github.com/SENATOROVAI/senatorovai-lab-support/issues/13), спасибо [Nieams](https://github.com/Nieams)
+- Правильно выполненные задания не всегда отмечались зелёным в прогрессе курса, курс по [множественной регрессии](https://stepik.org/lesson/1792642/step/9), [ишьюс](https://github.com/SENATOROVAI/senatorovai-lab-support/issues/14), спасибо [Nieams](https://github.com/Nieams)
 
 # Улучшение организации
 - Обновление интро,внедрение раздела о нас, договора, средства коммуникации, спасибо [ViktorVinogradov89](https://github.com/ViktorVinogradov89)
-- Структурированна информация об организации, [ишьюс](https://github.com/SENATOROVAI/Data-Science-For-Beginners-from-scratch-SENATOROV/issues/547), спасибо [svetlana-s88](https://github.com/svetlana-s88) 
+- Структурированна информация об организации, [ишьюс](https://github.com/SENATOROVAI/Data-Science-For-Beginners-from-scratch-SENATOROV/issues/547), спасибо [svetlana-s88](https://github.com/svetlana-s88)
 
 ---
 
