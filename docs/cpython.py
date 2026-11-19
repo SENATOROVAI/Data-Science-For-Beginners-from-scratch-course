@@ -10,7 +10,14 @@
 #
 # 3. Сколько существует реализаций Python и какая из них самая популярная?
 #
-# 6, самая популярная реализация - CPython
+# 6
+# CPython
+# PyPy
+# Jython
+# IronPython
+# Python for .NET (Python.NET)
+# Stackless Python
+# самая популярная реализация - CPython
 #
 # 4. На каком языке написан CPython?
 #
@@ -28,7 +35,7 @@
 #
 # 7. Укажите путь к интерпретатору CPython на вашем компьютере.
 #
-# C:\Users\User\AppData\Local\Programs\Python\Python311
+# C:\Users\User\AppData\Local\Programs\Python\Python311\python.exe
 #
 # 8. Что содержится в папке include в CPython?
 #
