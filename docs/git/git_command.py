@@ -58,4 +58,3 @@
 # - `git help <команда>` - получить справку
 # - `git <команда> --help` - альтернативный вызов справки
 # - `git ls-files --other --ignored --exclude-standard` - показать игнорируемые файлы
-# my_first_git_change
