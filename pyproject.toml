@@ -2,3 +2,120 @@
 formats = "ipynb,py:light"
 cell_metadata_filter = "-all"
 notebook_metadata_filter = "-all"
+
+# Ruff: lint and format of .py and notebooks. 88 characters: the Black and Ruff default, the most common line in
+# Python teams; ruff format keeps code to it. E501 is off, as in Home Assistant: prose of markdown cells (comments of the
+# .py twins), long strings and links cannot be wrapped by the formatter. The rules below took over from flake8, pep8-naming, pydocstyle, isort, pyupgrade and the part of pylint
+# Ruff knows (the same split as Home Assistant: pylint keeps only what Ruff and mypy cannot check).
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+  "E", "W", "F",          # pycodestyle, pyflakes
+  "N",                    # pep8-naming
+  "A",                    # builtins shadowed by names (flake8-builtins; VNE003 of flake8-variables-names)
+  "D",                    # docstrings (pydocstyle)
+  "I",                    # imports (isort)
+  "UP",                   # modern syntax (pyupgrade)
+  "PL",                   # the pylint rules Ruff knows
+  "B002", "B006", "B014", "B023", "B026", "B904",                        # pylint: bugs of bugbear
+  "C401", "C402", "C405", "C406", "C416", "C417",                        # pylint: comprehensions
+  "SIM108", "SIM118", "SIM208", "SIM401",                                # pylint: simpler code
+  "RET505", "RET506", "RET507", "RET508",                                # pylint: no-else-*
+  "PIE790", "G001", "G002", "G003", "G004", "S102", "S307", "T100",      # pylint: pass, logging, exec/eval, debugger
+  "TRY002", "TRY203", "BLE001", "SLF001", "COM818",                      # pylint: exceptions, private access
+]
+ignore = [
+  "E501",                                  # line length: kept by ruff format, see above
+  "E712", "F401", "F403", "F632", "F821",  # as in the old flake8 setup: notebooks import and compare freely
+  "PLR2004",                              # magic numbers: not a pylint default either
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+# mypy, strict, for .py and notebooks (the same settings for both hooks).
+[tool.mypy]
+strict = true
+explicit_package_bases = true
+ignore_missing_imports = true
+disallow_any_decorated = true
+disallow_any_explicit = true
+local_partial_types = true
+warn_unreachable = true
+pretty = true
+
+# pylint next to Ruff, for what Ruff cannot check: no-member, cyclic-import, duplicate-code, the design checks and more.
+# What Ruff (rules above) and mypy already check is off here, as in Home Assistant:
+# https://github.com/home-assistant/core/blob/dev/pyproject.toml ([tool.pylint."MESSAGES CONTROL"]).
+[tool.pylint.main]
+ignore-patterns = ["^no_check.*", "^__init__\\.py$"]
+
+[tool.pylint.basic]
+const-naming-style = "any"
+
+[tool.pylint.format]
+max-line-length = 88
+
+[tool.pylint."messages control"]
+disable = [
+  # Notebooks: a bare expression shows a value; imports of packages the hook does not install.
+  "pointless-statement", "expression-not-assigned", "import-error", "no-name-in-module",
+  "too-few-public-methods", "unnecessary-comprehension",
+
+  # Handled by Ruff
+  "format",                                                    # E, W: line length, spaces, newlines
+  "await-outside-async", "bad-str-strip-call", "bad-string-format-type", "bidirectional-unicode",
+  "continue-in-finally", "duplicate-bases", "misplaced-bare-raise", "format-needs-mapping", "function-redefined",
+  "invalid-all-object", "invalid-character-backspace", "invalid-character-esc", "invalid-character-nul",
+  "invalid-character-sub", "invalid-character-zero-width-space", "logging-too-few-args", "logging-too-many-args",
+  "missing-format-string-key", "mixed-format-string", "no-method-argument", "no-self-argument",
+  "nonexistent-operator", "nonlocal-without-binding", "not-in-loop", "notimplemented-raised", "return-in-init",
+  "return-outside-function", "syntax-error", "too-few-format-args", "too-many-format-args",
+  "too-many-star-expressions", "truncated-format-string", "undefined-all-variable", "undefined-variable",
+  "used-prior-global-declaration", "yield-inside-async-function", "yield-outside-function",
+  "anomalous-backslash-in-string", "assert-on-string-literal", "assert-on-tuple", "bad-format-string",
+  "bad-format-string-key", "bare-except", "binary-op-exception", "cell-var-from-loop", "dangerous-default-value",
+  "duplicate-except", "duplicate-key", "duplicate-string-formatting-argument", "duplicate-value", "eval-used",
+  "exec-used", "f-string-without-interpolation", "forgotten-debug-statement", "format-string-without-interpolation",
+  "global-statement", "global-variable-not-assigned", "import-outside-toplevel", "import-self",
+  "invalid-envvar-default", "keyword-arg-before-vararg", "logging-format-interpolation",
+  "logging-fstring-interpolation", "logging-not-lazy", "misplaced-future", "named-expr-without-context",
+  "nested-min-max", "raise-missing-from", "redefined-builtin", "try-except-raise", "unused-format-string-argument",
+  "unused-format-string-key", "unused-import", "unused-variable", "useless-else-on-loop", "wildcard-import",
+  "bad-classmethod-argument", "consider-iterating-dictionary", "empty-docstring", "invalid-name",
+  "missing-class-docstring", "missing-function-docstring", "missing-module-docstring", "multiple-imports",
+  "singleton-comparison", "subprocess-run-check", "superfluous-parens", "ungrouped-imports",
+  "unidiomatic-typecheck", "unnecessary-direct-lambda-call", "unnecessary-lambda-assignment", "unnecessary-pass",
+  "unneeded-not", "useless-import-alias", "wrong-import-order", "wrong-import-position", "comparison-of-constants",
+  "comparison-with-itself", "consider-merging-isinstance", "consider-using-dict-comprehension", "consider-using-generator", "consider-using-get",
+  "consider-using-set-comprehension", "consider-using-sys-exit", "consider-using-ternary", "literal-comparison",
+  "property-with-parameters", "super-with-arguments", "too-many-arguments", "too-many-positional-arguments",
+  "too-many-branches", "too-many-return-statements", "too-many-statements", "trailing-comma-tuple", "use-a-generator",
+  "use-dict-literal", "use-list-literal", "useless-object-inheritance", "useless-return", "no-else-break",
+  "no-else-continue", "no-else-raise", "no-else-return", "broad-exception-caught", "protected-access",
+  "broad-exception-raised", "consider-using-f-string",
+
+  # Handled by mypy (https://github.com/antonagestam/pylint-mypy-overlap); no-member stays on
+  "abstract-class-instantiated", "arguments-differ", "assigning-non-slot", "assignment-from-no-return",
+  "assignment-from-none", "bad-exception-cause", "bad-format-character", "bad-reversed-sequence", "bad-super-call",
+  "bad-thread-instantiation", "catching-non-exception", "comparison-with-callable", "deprecated-class",
+  "dict-iter-missing-items", "format-combined-specification", "global-variable-undefined", "inconsistent-mro",
+  "inherit-non-class", "init-is-generator", "invalid-class-object", "invalid-enum-extension", "invalid-envvar-value",
+  "invalid-format-returned", "invalid-hash-returned", "invalid-metaclass", "invalid-overridden-method",
+  "invalid-repr-returned", "invalid-sequence-index", "invalid-slice-index", "invalid-slots-object", "invalid-slots",
+  "invalid-star-assignment-target", "invalid-str-returned", "invalid-unary-operand-type", "invalid-unicode-codec",
+  "isinstance-second-argument-not-valid-type", "method-hidden", "misplaced-format-function",
+  "missing-format-argument-key", "missing-format-attribute", "missing-kwoa", "no-value-for-parameter",
+  "non-iterator-returned", "non-str-assignment-to-dunder-name", "nonlocal-and-global", "not-a-mapping",
+  "not-an-iterable", "not-async-context-manager", "not-callable", "not-context-manager", "overridden-final-method",
+  "raising-bad-type", "raising-non-exception", "redundant-keyword-arg", "relative-beyond-top-level",
+  "self-cls-assignment", "signature-differs", "star-needs-assignment-target", "subclassed-final-class",
+  "super-without-brackets", "too-many-function-args", "typevar-double-variance", "typevar-name-mismatch",
+  "unbalanced-dict-unpacking", "unbalanced-tuple-unpacking", "unexpected-keyword-arg", "unhashable-member",
+  "unpacking-non-sequence", "unsubscriptable-object", "unsupported-assignment-operation",
+  "unsupported-binary-operation", "unsupported-delete-operation", "unsupported-membership-test",
+  "used-before-assignment", "using-final-decorator-in-unsupported-version", "wrong-exception-operation",
+]
